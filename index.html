@@ -743,6 +743,18 @@
 <p><strong>注意</strong>：这里需要有 GitHub SSH Key，没有的请参照<a href="/2023/02/04/github-ssh-key/">这篇文章</a>。</p>
 <p>最后，运行 <code>hexo generate &amp;&amp; hexo deploy</code> 即可。</p>
 <p><strong>建议</strong>：在部署前最好先在本地浏览一下（<code>hexo generate &amp;&amp; hexo server</code>），以免出现问题。</p>
+<h2 id="使用-Netlify-加速"><a href="#使用-Netlify-加速" class="headerlink" title="使用 Netlify 加速"></a>使用 Netlify 加速</h2><p>众所周知，GitHub Pages 加载很慢，有时甚至根本加载不出来。我们可以通过使用 <a target="_blank" rel="noopener" href="https://netlify.com">Netlify</a> 进行加速。下面是两张对比图。</p>
+<p>加速前：<br><img src="/images/hexo-blog-instruction/github-speed.png" alt="github-speed"></p>
+<p>加速后：<br><img src="/images/hexo-blog-instruction/netlify-speed.png" alt="netlify-speed"></p>
+<p>首先注册 Netlify（使用 GitHub 账号注册）。然后添加站点：</p>
+<p><img src="/images/hexo-blog-instruction/netlify-add-site.png" alt="netlify-add-site"></p>
+<p><img src="/images/hexo-blog-instruction/netlify-import-site-from-github.png" alt="netlify-import-site-from-github"></p>
+<p><img src="/images/hexo-blog-instruction/netlify-import-site-select-repo.png" alt="netlify-import-site-select-repo"></p>
+<p><img src="/images/hexo-blog-instruction/netlify-deploy-site.png" alt="netlify-deploy-site"></p>
+<p>等待部署完成后，即可获得一个随机二级域名供访问（见网页提示）。如需更改这个二级域名，按照以下步骤进行即可。</p>
+<p><img src="/images/hexo-blog-instruction/netlify-set-domain-1.png" alt="netlify-set-domain-1"></p>
+<p><img src="/images/hexo-blog-instruction/netlify-set-domain-2.png" alt="netlify-set-domain-2"></p>
+<p><img src="/images/hexo-blog-instruction/netlify-set-domain-3.png" alt="netlify-set-domain-3"></p>
 <h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><h3 id="去除-gitignore-中的某些条目"><a href="#去除-gitignore-中的某些条目" class="headerlink" title="去除 .gitignore 中的某些条目"></a>去除 .gitignore 中的某些条目</h3><p>在 Hexo 根文件夹有一个 .gitignore 文件，初始内容为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
 <p>将其改为：</p>
